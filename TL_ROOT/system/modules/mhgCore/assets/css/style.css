@@ -1,0 +1,116 @@
+/**
+ * OVERWRITE default theme
+**/
+#header h1 a {
+    color: #FFF;
+}
+
+/* ELEMENTS */
+#ctrl_articleAlias_chzn {
+    width: 680px;
+    max-width: 100%;    
+}
+
+
+/**
+ * OVERWRITE smart_backend_theme
+**/
+body.smart_backend_theme {
+    line-height: 1.5em;
+    background: #DDD;
+}
+
+body.smart_backend_theme .tl_submit_container {
+    background: #CCC;
+}
+
+body.smart_backend_theme #header h1 {
+    top: 0;
+    z-index: 2;
+}
+
+body.smart_backend_theme #header h1 a {
+    display: block;
+    width: 205px;
+    margin: 0;
+    padding: 70px 0 0;
+    font-size: 10px;
+    overflow: hidden;
+    text-align: center;
+    color: #BBB;
+    background: transparent url("../img/logo.png") scroll no-repeat center top;
+}
+
+body.smart_backend_theme #container {
+    z-index: 1;
+}
+
+body.smart_backend_theme #main {
+    left: 0;
+    padding: 1px 1px 1px 1px;
+}
+
+body.smart_backend_theme #left + #main {
+    left: 207px;
+}
+
+body.smart_backend_theme #footer {
+    width: 930px;
+}
+
+body.smart_backend_theme h1.main_headline {
+    padding-bottom: 5px;
+}
+
+body.smart_backend_theme h2.sub_headline,
+body.smart_backend_theme h2.sub_headline_all,
+body.smart_backend_theme h2.sub_headline_update,
+body.smart_backend_theme h2.sub_headline_index,
+body.smart_backend_theme h2.sub_headline_rss,
+body.smart_backend_theme fieldset.tl_tbox>legend, fieldset.tl_box>legend {
+    color: #8ab858;
+}
+
+
+/**
+ * OVERWRITE om_backend
+**/
+body.om_toolbar #toolbar .button[href^="contao/main.php?do=id_search"],
+body.om_toolbar #toolbar .button[href^="contao/main.php?do=files"],
+body.om_toolbar #toolbar .button[href^="contao/main.php?do=themes&table=tl_style_sheet"] {
+    display:none;
+}
+
+body.smart_backend_theme.om_toolbar #main {
+    -webkit-border-radius: 5px 0 5px 5px;
+    -moz-border-radius: 5px 0 5px 5px;
+    -o-border-radius: 5px 0 5px 5px;
+    border-radius: 5px 0 5px 5px;
+}
+
+body.smart_backend_theme.om_toolbar #toolbar {
+    position: fixed;
+    padding: 1px;
+    top: inherit;
+    right: inherit;
+    margin: 0 0 0 951px;
+
+    -webkit-border-radius: 0 5px 5px 5px;
+    -moz-border-radius: 0 5px 5px 5px;
+    -o-border-radius: 0 5px 5px 5px;
+    border-radius: 0 5px 5px 5px;
+}
+
+body.smart_backend_theme.om_toolbar #toolbar .separator {
+    border-bottom-color: #DDD;
+}
+
+body.smart_backend_theme.om_toolbar.smart_backend_theme #toolbar h1 {
+    margin: 0;
+    padding: 9px 0 9px 0;
+    font-size: 11px;
+    color: #666966;
+    background-color: transparent;
+    background-image: url("../../../../themes/smart_backend_theme/images/headline.gif");
+    text-align: center;
+}
