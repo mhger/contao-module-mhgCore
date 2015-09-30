@@ -73,9 +73,10 @@ class Compress
         {
         $str = $input;
         /* remove comments */
-        $str = preg_replace( "/((?:\/\*(?:[^*]|(?:\*+[^*\/]))*\*+\/)|(?:\/\/.*))/", "", $str );
+        #$str = preg_replace( "/((?:\/\*(?:[^*]|(?:\*+[^*\/]))*\*+\/)|(?:\/\/.*))/", "", $str );
         /* remove tabs, spaces, newlines, etc. */
-        $str = str_replace( array( "\n\r", "\r\n", "\r", "\n", "\t", '    ', '   ', '  ' ), ' ', $str );
+        // "\n\r", "\r\n", "\r", "\n",
+        $str = str_replace( array(  "\t", '    ', '   ', '  ' ), ' ', $str );
         /* remove other spaces before/after ) */
         $str = preg_replace( array( '(( )+\))', '(\)( )+)' ), ')', $str );
 
