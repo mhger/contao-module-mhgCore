@@ -9,3 +9,6 @@
  * @author      Pierre Gersöne <mail@medienhaus-gersoene.de>
  */
 $GLOBALS['TL_LANG']['MSC']['page'] = 'Seite';
+
+// Image formats 
+$GLOBALS['TL_LANG']['MSC']['predefinedFormats'] = 'Vordefinierte Formate';

@@ -95,15 +95,23 @@ $GLOBALS['TL_HOOKS']['initializeSystem'][] = array( 'mhg\Core', 'initializeSyste
 
 /**
  * Register frontend Hooks
- */
+**/
 if( TL_MODE == 'FE' )
     {
     $GLOBALS['TL_HOOKS']['getCombinedFile'][] = array( 'mhg\Compress', 'getCombinedFile' );
     }
 /**
  * global backend changes
- */
+**/
 if( TL_MODE == 'BE' )
     {
     $GLOBALS['TL_CSS'][] = 'system/modules/mhgCore/assets/css/style.css';
     }
+
+/**
+ *  MHG Globals
+**/
+if( !is_array( $GLOBALS['TL_MHG'] ) )
+    {
+    $GLOBALS['TL_MHG'] = array();
+    }    
