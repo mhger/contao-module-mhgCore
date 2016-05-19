@@ -1,6 +1,6 @@
 <?php
 /**
- * mx|byte Contao 3 Extension
+ * MHG Contao 3 Extension
  *
  * @package     mhgCore
  * @link        http://www.medienhaus-gersoene.de
