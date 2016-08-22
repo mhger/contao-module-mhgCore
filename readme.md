@@ -1,3 +1,3 @@
-# Module Name
+Contao Module mhgCore
 
-The description goes here
+Zusätzliche Einstellungen, welche die Usability im Backend verbessern, Css und JS Kompressor.
