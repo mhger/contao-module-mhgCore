@@ -1,12 +1,12 @@
 <?php
 /**
- * mhg Contao 3 Extension
+ * Contao 3 Extension [mhgCore]
+ *
+ * Copyright (c) 2016 Medienhaus Gersöne UG | Pierre Gersöne
  *
  * @package     mhgCore
  * @link        http://www.medienhaus-gersoene.de
- * @license     propitary
- * @copyright   Copyright (c) 2015 Medienhaus Gersöne UG
- * @author      Pierre Gersöne <mail@medienhaus-gersoene.de>
+ * @license     propitary licence
  */
 namespace mhg;
 
