@@ -1,3 +1,3 @@
 # [mhgCore]
 
-Zusätzliche Einstellungen, welche die Usability im Backend verbessern, Css und JS Kompressor.
+Zusätzliche Einstellungen, welche die Usability im Backend verbessern, CSS und JS Kompressor.
