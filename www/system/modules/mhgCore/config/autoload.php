@@ -25,4 +25,5 @@ ClassLoader::addClasses( array
     'mhg\Dca' => 'system/modules/mhgCore/classes/Dca.php',
     // Modules
     'mhg\ModuleSearch' => 'system/modules/mhgCore/modules/ModuleSearch.php',
+    'mhg\ModuleArticleList' => 'system/modules/mhgCore/modules/ModuleArticleList.php',
 ) );
