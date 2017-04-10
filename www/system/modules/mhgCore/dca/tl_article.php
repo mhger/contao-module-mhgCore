@@ -11,6 +11,7 @@
 
 mhg\Dca::modifyPalettes( ',space', '', 'tl_article' );
 
+$GLOBALS['TL_DCA']['tl_article']['palettes']['default'] = str_replace( ',guests', ',hide,guests', $GLOBALS['TL_DCA']['tl_article']['palettes']['default'] );
 $GLOBALS['TL_DCA']['tl_article']['fields']['hide'] = array(
     'label' => &$GLOBALS['TL_LANG']['tl_article']['hide'],
     'exclude' => true,
