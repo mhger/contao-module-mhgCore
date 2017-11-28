@@ -2,11 +2,14 @@
 /**
  * Contao 3 Extension [mhgCore]
  *
- * Copyright (c) 2016 Medienhaus Gersöne UG | Pierre Gersöne
+ * Copyright (c) 2017 Medienhaus Gersöne UG (haftungsbeschränkt) | Pierre Gersöne
  *
  * @package     mhgCore
- * @link        http://www.medienhaus-gersoene.de
- * @license     propitary licence
+ * @author      Pierre Gersöne <mail@medienhaus-gersoene.de>
+ * @link        https://www.medienhaus-gersoene.de Medienhaus Gersöne - Agentur für Neue Medien: Web, Design & Marketing
+ * @license     LGPL-3.0+
  */
-
-$GLOBALS['TL_DCA']['tl_theme']['fields']['name']['default'] = $GLOBALS['TL_CONFIG']['websiteTitle'];
+/**
+ * alter DCA fields
+ */
+mhg\Dca::alterFieldValue('tl_theme', 'name', 'default', $GLOBALS['TL_CONFIG']['websiteTitle']);

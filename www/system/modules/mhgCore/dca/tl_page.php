@@ -2,24 +2,26 @@
 /**
  * Contao 3 Extension [mhgCore]
  *
- * Copyright (c) 2016 Medienhaus Gersöne UG | Pierre Gersöne
+ * Copyright (c) 2017 Medienhaus Gersöne UG (haftungsbeschränkt) | Pierre Gersöne
  *
  * @package     mhgCore
- * @link        http://www.medienhaus-gersoene.de
- * @license     propitary licence
+ * @author      Pierre Gersöne <mail@medienhaus-gersoene.de>
+ * @link        https://www.medienhaus-gersoene.de Medienhaus Gersöne - Agentur für Neue Medien: Web, Design & Marketing
+ * @license     LGPL-3.0+
  */
+/**
+ * alter DCA palettes
+ */
+mhg\Dca::modifyPalettes('robots,description', 'description,robots', 'tl_page');
 
-// palettes
-$GLOBALS['TL_DCA']['tl_page']['palettes']['regular'] = str_replace(
-    'robots,description', 'description,robots', $GLOBALS['TL_DCA']['tl_page']['palettes']['regular'] );
+/**
+ * alter DCA fields
+ */
+mhg\Dca::alterFieldValue('tl_page', 'language', 'default', 'de');
 
-// language
-$GLOBALS['TL_DCA']['tl_page']['fields']['language']['default'] = 'de';
-// published
-$GLOBALS['TL_DCA']['tl_page']['fields']['published']['default'] = 1;
-$GLOBALS['TL_DCA']['tl_page']['fields']['published']['exclude'] = true;
-$GLOBALS['TL_DCA']['tl_page']['fields']['published']['filter'] = true;
-$GLOBALS['TL_DCA']['tl_page']['fields']['published']['flag'] = 1;
-// pageTitle
-$GLOBALS['TL_DCA']['tl_page']['fields']['pageTitle']['eval']['tl_class'] = 'long';
+mhg\Dca::alterFieldValue('tl_page', 'published', 'default', 1);
+mhg\Dca::alterFieldValue('tl_page', 'published', 'exclude', true);
+mhg\Dca::alterFieldValue('tl_page', 'published', 'filter', true);
+mhg\Dca::alterFieldValue('tl_page', 'published', 'flag', 1);
 
+mhg\Dca::alterFieldEval('tl_page', 'pageTitle', 'tl_class', 'long');

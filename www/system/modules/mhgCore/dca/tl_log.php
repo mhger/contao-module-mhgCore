@@ -2,15 +2,18 @@
 /**
  * Contao 3 Extension [mhgCore]
  *
- * Copyright (c) 2016 Medienhaus Gersöne UG | Pierre Gersöne
+ * Copyright (c) 2017 Medienhaus Gersöne UG (haftungsbeschränkt) | Pierre Gersöne
  *
  * @package     mhgCore
- * @link        http://www.medienhaus-gersoene.de
- * @license     propitary licence
+ * @author      Pierre Gersöne <mail@medienhaus-gersoene.de>
+ * @link        https://www.medienhaus-gersoene.de Medienhaus Gersöne - Agentur für Neue Medien: Web, Design & Marketing
+ * @license     LGPL-3.0+
  */
-
-$GLOBALS['TL_DCA']['tl_log']['fields']['referrer'] = array(
+/**
+ * add DCA fields
+ */
+mhg\Dca::addField('tl_log', 'referrer', array(
     'label' => &$GLOBALS['TL_LANG']['tl_log']['referrer'],
     'search' => true,
     'sql' => "text NULL"
-);
+));

@@ -2,13 +2,11 @@
 /**
  * Contao 3 Extension [mhgCore]
  *
- * Copyright (c) 2016 Medienhaus Gersöne UG | Pierre Gersöne
+ * Copyright (c) 2017 Medienhaus Gersöne UG (haftungsbeschränkt) | Pierre Gersöne
  *
  * @package     mhgCore
- * @link        http://www.medienhaus-gersoene.de
- * @license     propitary licence
+ * @author      Pierre Gersöne <mail@medienhaus-gersoene.de>
+ * @link        https://www.medienhaus-gersoene.de Medienhaus Gersöne - Agentur für Neue Medien: Web, Design & Marketing
+ * @license     LGPL-3.0+
  */
-
-$GLOBALS['TL_LANG']['tl_settings']['compressCss'] = array( 'CSS Komprimieren', 'Komprimiert CSS-Dateien für eine geringere Nutzung der Bandbreite.' );
-$GLOBALS['TL_LANG']['tl_settings']['scriptLoadingDelayed'] = array( 'Scripte verzögert laden', 'Javascripte verzögert laden.' );
-
+$GLOBALS['TL_LANG']['tl_settings']['compressCss'] = array('CSS Komprimieren', 'Komprimiert CSS-Dateien für eine geringere Nutzung der Bandbreite.');

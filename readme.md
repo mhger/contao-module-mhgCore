@@ -8,7 +8,7 @@ Idea and realisation: <https://www.medienhaus-gersoene.de>
 ## Features
 - auto publish pages on creation
 - removes unnecessary backend options (f.e. margins)
-- altered dca & backend layouts
+- altered backend layouts, default values etc.
 - css & js compressor build in
 
 
