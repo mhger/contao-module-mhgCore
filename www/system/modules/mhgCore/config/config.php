@@ -82,6 +82,7 @@ if (!function_exists('_p')) {
  * Register global hooks
  */
 $GLOBALS['TL_HOOKS']['addLogEntry'][] = array('mhg\Core', 'addLogEntry');
+$GLOBALS['TL_HOOKS']['generatePage'][] = array('mhg\Core', 'generatePage');
 $GLOBALS['TL_HOOKS']['initializeSystem'][] = array('mhg\Core', 'initializeSystem');
 
 
@@ -106,4 +107,14 @@ if (TL_MODE == 'BE') {
  */
 if (!is_array($GLOBALS['TL_MHG'])) {
     $GLOBALS['TL_MHG'] = array();
-}    
+}
+
+/**
+ * FRONTEND JS
+ */
+if (TL_MODE == 'FE') {
+    $GLOBALS['TL_JAVASCRIPT'][] = 'system/modules/mhgCore/assets/js/script.js?v=' . time();
+}
+
+
+
