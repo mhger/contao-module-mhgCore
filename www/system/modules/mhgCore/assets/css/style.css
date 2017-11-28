@@ -16,6 +16,7 @@
     color: #FFF;
 }
 
+
 /* ELEMENTS */
 #ctrl_articleAlias_chzn {
     width: 680px;
@@ -49,7 +50,7 @@ body.smart_backend_theme #header h1 a {
     overflow: hidden;
     text-align: center;
     color: #BBB;
-    background: transparent url("../img/logo.png") scroll no-repeat center top;
+    background: transparent url("../img/contao-logo.png") scroll no-repeat center top;
 }
 
 body.smart_backend_theme #container {

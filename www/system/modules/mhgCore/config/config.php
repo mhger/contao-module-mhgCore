@@ -10,7 +10,7 @@
  * @license     LGPL-3.0+
  */
 /**
- * Define Constants
+ * Define constants
  */
 if (!defined('DS')) {
     define('DS', DIRECTORY_SEPARATOR);
@@ -79,17 +79,20 @@ if (!function_exists('_p')) {
 }
 
 /**
- * Register global Hooks
+ * Register global hooks
  */
 $GLOBALS['TL_HOOKS']['addLogEntry'][] = array('mhg\Core', 'addLogEntry');
 $GLOBALS['TL_HOOKS']['initializeSystem'][] = array('mhg\Core', 'initializeSystem');
 
+
 /**
- * Register frontend Hooks
+ * Register frontend hooks
  */
 if (TL_MODE == 'FE') {
     $GLOBALS['TL_HOOKS']['getCombinedFile'][] = array('mhg\Compress', 'getCombinedFile');
 }
+
+
 /**
  * global backend changes
  */
@@ -97,8 +100,9 @@ if (TL_MODE == 'BE') {
     $GLOBALS['TL_CSS'][] = 'system/modules/mhgCore/assets/css/style.css';
 }
 
+
 /**
- *  MHG Globals
+ * Predefine MHG Globals
  */
 if (!is_array($GLOBALS['TL_MHG'])) {
     $GLOBALS['TL_MHG'] = array();
