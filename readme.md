@@ -9,7 +9,7 @@ Idea and realisation: <https://www.medienhaus-gersoene.de>
 - auto publish pages on creation
 - removes unnecessary backend options (f.e. margins)
 - altered backend layouts, default values etc.
-- css & js compressor build in
+- build in css compressor
 
 
 ### Manual

@@ -64,7 +64,7 @@ class Core {
     }
 
     /**
-     * Hook.
+     * Hook. FE / Frontend only.
      * 
      * @param   object $objPage
      * @param   object $objLayout
@@ -72,10 +72,8 @@ class Core {
      * @return  object void
      */
     public function generatePage($objPage, $objLayout, $objPageRegular) {
-        if (TL_MODE == 'FE') {
-            // toggle body class (nojs / js)
-            $script = "<script>(function(){var e=document.getElementById('top');e.classList.toggle('nojs');e.classList.toggle('js');})();</script>";
-            $objLayout->script.= $script;
-        }
+        // toggle body class (nojs / js)
+        $script = "<script>(function(){var e=document.getElementById('top');e.classList.toggle('nojs');e.classList.toggle('js');})();</script>";
+        $objLayout->script.= $script;
     }
 }
