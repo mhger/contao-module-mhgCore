@@ -34,7 +34,6 @@ if (!defined('SERVER_IP')) {
  */
 if (!function_exists('_p')) {
 
-
     /**
      * Simple debugger with backtrace
      *
