@@ -23,7 +23,4 @@ ClassLoader::addClasses(array
     'mhg\Compress' => 'system/modules/mhgCore/classes/Compress.php',
     'mhg\Core' => 'system/modules/mhgCore/classes/Core.php',
     'mhg\Dca' => 'system/modules/mhgCore/classes/Dca.php',
-    // Modules
-    'mhg\ModuleSearch' => 'system/modules/mhgCore/modules/ModuleSearch.php',
-    'mhg\ModuleArticleList' => 'system/modules/mhgCore/modules/ModuleArticleList.php',
 ));
