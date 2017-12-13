@@ -30,3 +30,8 @@ LGPL 3.0+
 
 ### Release
 2017-11-28
+
+
+### Changelog
+
+2017-12-13 v1.0.1  Minor bugfix
