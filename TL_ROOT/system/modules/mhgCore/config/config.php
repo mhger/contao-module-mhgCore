@@ -16,6 +16,10 @@ if (!defined('DS')) {
     define('DS', DIRECTORY_SEPARATOR);
 }
 
+if (!defined('PS')) {
+    define('PS', '/');
+}
+
 if (!defined('LB')) {
     define('LB', "\r\n");
 }
@@ -77,6 +81,19 @@ if (!function_exists('_p')) {
     }
 }
 
+
+/**
+ * Predefine Globals
+ */
+if (!isset($GLOBALS['TL_CSS']) || !is_array($GLOBALS['TL_CSS'])) {
+    $GLOBALS['TL_CSS'] = array();
+}
+
+if (!isset($GLOBALS['TL_MHG']) || !is_array($GLOBALS['TL_MHG'])) {
+    $GLOBALS['TL_MHG'] = array();
+}
+
+
 /**
  * Register global hooks
  */
@@ -97,13 +114,5 @@ if (TL_MODE == 'FE') {
  * global backend changes
  */
 if (TL_MODE == 'BE') {
-    $GLOBALS['TL_CSS'][] = 'system/modules/mhgCore/assets/css/style.css';
-}
-
-
-/**
- * Predefine MHG Globals
- */
-if (!is_array($GLOBALS['TL_MHG'])) {
-    $GLOBALS['TL_MHG'] = array();
+    $GLOBALS['TL_CSS'][] = 'system/modules/mhgCore/assets/css/backend.css';
 }

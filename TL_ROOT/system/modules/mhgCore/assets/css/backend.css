@@ -82,7 +82,3 @@ body.smart_backend_theme h2.sub_headline_rss,
 body.smart_backend_theme fieldset.tl_tbox>legend, fieldset.tl_box>legend {
     color: #8ab858;
 }
-
-body.smart_backend_theme .tl_text_unit {
-    width: 622px;    
-}
