@@ -2,7 +2,7 @@
 /**
  * Contao 3 Extension [mhgCore]
  *
- * Copyright (c) 2017 Medienhaus Gersöne UG (haftungsbeschränkt) | Pierre Gersöne
+ * Copyright (c) 2018 Medienhaus Gersöne UG (haftungsbeschränkt) | Pierre Gersöne
  *
  * @package     mhgCore
  * @author      Pierre Gersöne <mail@medienhaus-gersoene.de>
@@ -13,6 +13,8 @@
  * Sonstiges
  */
 $GLOBALS['TL_LANG']['MSC']['page'] = 'Seite';
+$GLOBALS['TL_LANG']['MSC']['medienhausGersoene'] = 'Medienhaus Gersöne';
+$GLOBALS['TL_LANG']['MSC']['mhgFooter'] = 'Ein Projekt der <a href="https://www.medienhaus-gersoene.de" target="_blank" title="Medienhaus Gersöne - Agentur für Neue Medien: Web, Design & Marketing">Medienhaus Gersöne</a>';
 
 /**
  * Image formats 
