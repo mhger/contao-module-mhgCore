@@ -1,0 +1,3 @@
+<div class="mhg_header">
+    <span class="headline"><?= $this->headline?></span>
+</div>

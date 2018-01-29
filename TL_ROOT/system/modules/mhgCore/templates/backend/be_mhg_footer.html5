@@ -1,0 +1,3 @@
+<div class="mhg_footer">
+    <span class="headline"><?= $GLOBALS['TL_LANG']['MSC']['mhgFooter']?></span>
+</div>
