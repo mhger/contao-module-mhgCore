@@ -1,0 +1,11 @@
+<?php if($this->tabs): ?>
+<div class="tab_header">
+    <ul class="tabs">
+    <?php foreach($this->tabs as $tab): ?>
+        <li<?php if($tab->state): ?> class="<?=  $tab->state ?>"<?php endif; ?>>
+            <a href="<?= $tab->link ?>"><?= $tab->label ?></a>
+        </li>
+    <?php endforeach; ?>
+    </ul>
+</div>
+<?php endif; ?>

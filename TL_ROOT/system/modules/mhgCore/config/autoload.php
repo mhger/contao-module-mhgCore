@@ -23,6 +23,7 @@ ClassLoader::addClasses(array
     'mhg\Compress' => 'system/modules/mhgCore/classes/Compress.php',
     'mhg\Core' => 'system/modules/mhgCore/classes/Core.php',
     'mhg\Dca' => 'system/modules/mhgCore/classes/Dca.php',
+    'mhg\Exception' => 'system/modules/mhgCore/classes/Exception.php',
     // Controllers
     'mhg\BackendMain' => 'system/modules/mhgCore/controllers/BackendMain.php',
 ));
@@ -33,5 +34,6 @@ ClassLoader::addClasses(array
 TemplateLoader::addFiles(array(
     // Backend
     'be_mhg_header' => 'system/modules/mhgCore/templates/backend',
-    'be_mhg_footer' => 'system/modules/mhgCore/templates/backend'
+    'be_mhg_footer' => 'system/modules/mhgCore/templates/backend',
+    'be_mhg_tabs' => 'system/modules/mhgCore/templates/backend'
 ));

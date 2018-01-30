@@ -12,6 +12,8 @@
 /**
  * Sonstiges
  */
+$GLOBALS['TL_LANG']['MSC']['credits'] = 'Credits';
+$GLOBALS['TL_LANG']['MSC']['dashboard'] = 'Dashboard';
 $GLOBALS['TL_LANG']['MSC']['page'] = 'Seite';
 $GLOBALS['TL_LANG']['MSC']['medienhausGersoene'] = 'Medienhaus Gersöne';
 $GLOBALS['TL_LANG']['MSC']['mhgFooter'] = 'Ein Projekt der <a href="https://www.medienhaus-gersoene.de" target="_blank" title="Medienhaus Gersöne - Agentur für Neue Medien: Web, Design & Marketing">Medienhaus Gersöne</a>';

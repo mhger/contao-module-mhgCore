@@ -24,20 +24,47 @@ class BackendMain extends \Contao\BackendMain {
      * @return string
      */
     protected function welcomeScreen() {
-        // get the default content
-        $strReturn = parent::welcomeScreen();
+        $strHeader = '';
+        $strFooter = '';
+        $key = \Input::get('key');
 
-        // add header
-        $objTemplate = new \Contao\BackendTemplate('be_mhg_header');
-        $objTemplate->headline = $GLOBALS['TL_LANG']['MOD']['mhgCore'];
-        $strHeader = $objTemplate->parse();
+        switch ($key) {
+            case 'credits':
+                $objTemplate = new \Contao\BackendTemplate('be_mhg_header');
+                $objTemplate->headline = $strHeadline ? $strHeadline : $GLOBALS['TL_LANG']['MOD']['mhgCore'];
+                $strHeader = $objTemplate->parse();
+
+                $objTemplate = new \Contao\BackendTemplate('be_mhg_footer');
+                $strFooter = $objTemplate->parse();
+                break;
+            default:
+                // get the default content
+                $key = '';
+                $strReturn = parent::welcomeScreen();
+                break;
+        }
+
+        // add tab header
+        $tabs = array(
+            (object) array(
+                'state' => '' === $key ? 'active' : '',
+                'link' => 'contao/main.php',
+                'label' => $GLOBALS['TL_LANG']['MSC']['dashboard']
+            ),
+            (object) array(
+                'state' => 'credits' === $key ? 'active' : '',
+                'link' => 'contao/main.php?key=credits',
+                'label' => $GLOBALS['TL_LANG']['MSC']['credits']
+            ),
+        );
+
+        $objTemplate = new \Contao\BackendTemplate('be_mhg_tabs');
+        $objTemplate->tabs = (object) $tabs;
+        $strHeader = $objTemplate->parse() . $strHeader;
 
         $strReturn = $strHeader . $strReturn;
 
-        // add footer
-        $objTemplate = new \Contao\BackendTemplate('be_mhg_footer');
-        $strFooter = $objTemplate->parse();
-
+        // add footer - if available
         $strReturn = $strReturn . $strFooter;
 
         return $strReturn;
