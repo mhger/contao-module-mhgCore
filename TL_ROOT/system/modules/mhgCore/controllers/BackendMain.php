@@ -14,7 +14,7 @@ namespace mhg;
 
 
 /**
- * Overwrite main backend controller.
+ * Extendes main backend controller.
  */
 class BackendMain extends \Contao\BackendMain {
 
@@ -24,48 +24,49 @@ class BackendMain extends \Contao\BackendMain {
      * @return string
      */
     protected function welcomeScreen() {
-        $strHeader = '';
-        $strFooter = '';
-        $key = \Input::get('key');
+        $varCallback = null;
+        $activeTab = BackendController::getActiveTab(welcomeScreen);
 
-        switch ($key) {
-            case 'credits':
-                $objTemplate = new \Contao\BackendTemplate('be_mhg_header');
-                $objTemplate->headline = $strHeadline ? $strHeadline : $GLOBALS['TL_LANG']['MOD']['mhgCore'];
-                $strHeader = $objTemplate->parse();
+        // first generate tabs
+        $arrTabs = array();
+        foreach ($GLOBALS['TL_MHG']['backend']['welcomeScreen']['tabs'] as $tab => $callback) {
+            $varCallback = $tab === $activeTab ? $callback : $varCallback;
 
-                $objTemplate = new \Contao\BackendTemplate('be_mhg_footer');
-                $strFooter = $objTemplate->parse();
-                break;
-            default:
-                // get the default content
-                $key = '';
-                $strReturn = parent::welcomeScreen();
-                break;
+            $arrTabs[] = (object) array(
+                        'state' => $tab === $activeTab ? 'active' : '',
+                        'link' => static::addToUrl('key=' . $tab, true),
+                        'label' => $GLOBALS['TL_LANG']['MSC']['dashboard'] // [$tab]
+            );
         }
 
-        // add tab header
-        $tabs = array(
-            (object) array(
-                'state' => '' === $key ? 'active' : '',
-                'link' => 'contao/main.php',
-                'label' => $GLOBALS['TL_LANG']['MSC']['dashboard']
-            ),
-            (object) array(
-                'state' => 'credits' === $key ? 'active' : '',
-                'link' => 'contao/main.php?key=credits',
-                'label' => $GLOBALS['TL_LANG']['MSC']['credits']
-            ),
-        );
+        $objTemplate = new \BackendTemplate('be_mhg_tabs');
+        $objTemplate->tabs = (object) $arrTabs;
+        $strReturn = $objTemplate->parse();
 
-        $objTemplate = new \Contao\BackendTemplate('be_mhg_tabs');
-        $objTemplate->tabs = (object) $tabs;
-        $strHeader = $objTemplate->parse() . $strHeader;
+        // generate body
+        if ($activeTab === 'default') {
+            $strReturn.= parent::welcomeScreen();
+        } else {
+            if (is_callable($varCallback)) {
+                $objCallback = new $varCallback[0];
+                $strReturn.= $objCallback->{$varCallback[1]}();
+            }
 
-        $strReturn = $strHeader . $strReturn;
+            $objTemplate = new \Contao\BackendTemplate('be_mhg_footer');
+            $strReturn.= $objTemplate->parse();
+        }
 
-        // add footer - if available
-        $strReturn = $strReturn . $strFooter;
+        return $strReturn;
+    }
+
+    /**
+     * @param   void
+     * @return  string
+     */
+    public function generateCredits() {
+        $objTemplate = new \Contao\BackendTemplate('be_mhg_header');
+        $objTemplate->headline = $GLOBALS['TL_LANG']['MOD']['mhgCore'];
+        $strReturn = $objTemplate->parse();
 
         return $strReturn;
     }

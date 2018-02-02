@@ -114,5 +114,16 @@ if (TL_MODE == 'FE') {
  * global backend changes / modifications
  */
 if (TL_MODE == 'BE') {
-    $GLOBALS['TL_CSS'][] = 'system/modules/mhgCore/assets/css/backend.css?v='.time();
+    $GLOBALS['TL_CSS'][] = 'system/modules/mhgCore/assets/css/backend.css?v=' . time();
 }
+
+// general MHG module configuration array
+$GLOBALS['TL_MHG'] = array();
+$GLOBALS['TL_MHG']['backend'] = array(
+    'welcomeScreen' => array(
+        'tabs' => array(
+            'default' => false,
+            #'credits' => array('mhg\BackendMain', 'generateCredits'),
+        )
+    )
+);

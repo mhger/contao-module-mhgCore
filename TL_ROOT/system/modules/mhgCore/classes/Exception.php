@@ -16,6 +16,6 @@ namespace mhg;
 /**
  * class mhg\Exception
  */
-class Exception extends \Exception {
+class Exception extends \Contao\Exception {
     // void
 }
