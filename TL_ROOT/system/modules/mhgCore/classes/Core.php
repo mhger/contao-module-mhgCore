@@ -75,5 +75,13 @@ class Core {
         // toggle body class (nojs / js)
         $script = "<script>(function(){var e=document.getElementById('top');e.classList.toggle('nojs');e.classList.toggle('js');})();</script>";
         $objLayout->script.= $script;
+
+        // add theme-color 
+        $themeColor = deserialize($objLayout->themeColor);
+        
+        if (isset($themeColor[0]) && strlen($themeColor[0]) === 6) {
+            $themeColor[0];
+            $GLOBALS['TL_HEAD']['fontawesome'] = '<meta name="theme-color" content="#' . $themeColor[0] . '">';
+        }
     }
 }
