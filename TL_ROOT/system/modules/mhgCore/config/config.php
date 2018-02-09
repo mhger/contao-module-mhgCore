@@ -123,7 +123,7 @@ $GLOBALS['TL_MHG']['backend'] = array(
     'welcomeScreen' => array(
         'tabs' => array(
             'default' => false,
-            #'credits' => array('mhg\BackendMain', 'generateCredits'),
+            'info' => array('mhg\BackendMain', 'generateInfo'),
         )
     )
 );

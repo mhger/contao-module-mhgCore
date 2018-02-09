@@ -12,7 +12,8 @@
 /**
  * Sonstiges
  */
-$GLOBALS['TL_LANG']['MSC']['dashboard'] = 'Dashboard';
+$GLOBALS['TL_LANG']['MSC']['dashboard']['default'] = 'Dashboard';
+$GLOBALS['TL_LANG']['MSC']['dashboard']['info'] = 'Info';
 
 $GLOBALS['TL_LANG']['MSC']['nextPage'] = 'Nächste Seite';
 $GLOBALS['TL_LANG']['MSC']['nextPageTitle'] = 'Weiter zur nächsten Seite';
@@ -27,3 +28,4 @@ $GLOBALS['TL_LANG']['MSC']['mhgFooterNote'] = 'Ein Projekt der <a href="https://
  * Image formats 
  */
 $GLOBALS['TL_LANG']['MSC']['predefinedFormats'] = 'Vordefinierte Formate';
+

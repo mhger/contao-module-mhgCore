@@ -8,6 +8,10 @@
  * @link        https://www.medienhaus-gersoene.de Medienhaus Gersöne - Agentur für Neue Medien: Web, Design & Marketing
  * @license     LGPL-3.0+
  */
+body {
+    overflow-y: scroll;
+}
+
 .mhg_header {
     width: auto;
     height: 60px;

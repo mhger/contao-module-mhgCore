@@ -35,7 +35,7 @@ class BackendMain extends \Contao\BackendMain {
             $arrTabs[] = (object) array(
                         'state' => $tab === $activeTab ? 'active' : '',
                         'link' => static::addToUrl('key=' . $tab, true),
-                        'label' => $GLOBALS['TL_LANG']['MSC']['dashboard'] // [$tab]
+                        'label' => $GLOBALS['TL_LANG']['MSC']['dashboard'][$tab]
             );
         }
 
@@ -63,7 +63,7 @@ class BackendMain extends \Contao\BackendMain {
      * @param   void
      * @return  string
      */
-    public function generateCredits() {
+    public function generateInfo() {
         $objTemplate = new \Contao\BackendTemplate('be_mhg_header');
         $objTemplate->headline = $GLOBALS['TL_LANG']['MOD']['mhgCore'];
         $strReturn = $objTemplate->parse();
