@@ -34,6 +34,7 @@ ClassLoader::addClasses(array
  */
 TemplateLoader::addFiles(array(
     // Backend
+    'be_main_info' => 'system/modules/mhgCore/templates/backend',
     'be_mhg_header' => 'system/modules/mhgCore/templates/backend',
     'be_mhg_footer' => 'system/modules/mhgCore/templates/backend',
     'be_mhg_tabs' => 'system/modules/mhgCore/templates/backend'

@@ -64,8 +64,45 @@ class BackendMain extends \Contao\BackendMain {
      * @return  string
      */
     public function generateInfo() {
-        $objTemplate = new \Contao\BackendTemplate('be_mhg_header');
-        $objTemplate->headline = $GLOBALS['TL_LANG']['MOD']['mhgCore'];
+        $arrSections = array();
+
+        $objTemplate = new \Contao\BackendTemplate('be_main_info');
+        $arrSections[] = (object) array(
+                    'id' => 'section_mhgCore',
+                    'label' => $GLOBALS['TL_LANG']['MOD']['mhgCore'],
+                    'links' => array(
+                        (object) array(
+                            'title' => $GLOBALS['TL_LANG']['MOD']['mhgCore'],
+                            'icon' => 'system/modules/mhgCore/assets/img/mhg-icon.png',
+                            'link' => 'https://www.medienhaus-gersoene.de',
+                            'label' => $GLOBALS['TL_LANG']['MSC']['documentation'],
+                            'external' => 1
+                        ),
+                    )
+        );
+
+        $arrSections[] = (object) array(
+                    'id' => 'section_mhgModules',
+                    'label' => $GLOBALS['TL_LANG']['MSC']['mhgModules']['label'],
+                    'links' => array(
+                        (object) array(
+                            'title' => $GLOBALS['TL_LANG']['MSC']['mhgModules']['mhgElements'],
+                            'icon' => 'system/modules/mhgCore/assets/img/mhg-icon.png',
+                            'link' => static::addToUrl('do=repository_catalog&view=mhgElements', true),
+                            'label' => $GLOBALS['TL_LANG']['MSC']['mhgModules']['mhgElements']
+                        ),
+                        (object) array(
+                            'title' => $GLOBALS['TL_LANG']['MSC']['mhgModules']['mhgFontAwesome'],
+                            'icon' => 'system/modules/mhgCore/assets/img/mhg-icon.png',
+                            'link' => static::addToUrl('do=repository_catalog&view=mhgFontAwesome', true),
+                            'label' => $GLOBALS['TL_LANG']['MSC']['mhgModules']['mhgFontAwesome']
+                        ),
+                    )
+        );
+
+
+        $objTemplate->sections = $arrSections;
+
         $strReturn = $objTemplate->parse();
 
         return $strReturn;

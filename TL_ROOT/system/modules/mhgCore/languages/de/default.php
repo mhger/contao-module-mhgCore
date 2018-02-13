@@ -12,9 +12,12 @@
 /**
  * Sonstiges
  */
-$GLOBALS['TL_LANG']['MSC']['dashboard']['default'] = 'Dashboard';
-$GLOBALS['TL_LANG']['MSC']['dashboard']['info'] = 'Info';
+$GLOBALS['TL_LANG']['MSC']['dashboard'] = array(
+    'default' => 'Dashboard',
+    'info' => 'Info'
+);
 
+$GLOBALS['TL_LANG']['MSC']['documentation'] = 'Dokumentation';
 $GLOBALS['TL_LANG']['MSC']['nextPage'] = 'Nächste Seite';
 $GLOBALS['TL_LANG']['MSC']['nextPageTitle'] = 'Weiter zur nächsten Seite';
 $GLOBALS['TL_LANG']['MSC']['prevPage'] = 'Vorherige Seite';
@@ -23,9 +26,13 @@ $GLOBALS['TL_LANG']['MSC']['prevPageTitle'] = 'Zurück zur vorherigen Seite';
 $GLOBALS['TL_LANG']['MSC']['page'] = 'Seite';
 $GLOBALS['TL_LANG']['MSC']['medienhausGersoene'] = 'Medienhaus Gersöne';
 $GLOBALS['TL_LANG']['MSC']['mhgFooterNote'] = 'Ein Projekt der <a href="https://www.medienhaus-gersoene.de" target="_blank" title="Medienhaus Gersöne - Agentur für Neue Medien: Web, Design & Marketing">Medienhaus Gersöne</a>';
-
+$GLOBALS['TL_LANG']['MSC']['mhgModules'] = array(
+    'label' => 'MHG Erweiterungen',
+    'mhgCore' => 'mhgCore',
+    'mhgElements' => 'mhgElements',
+    'mhgFontAwesome' => 'mhgFontAwesome',
+);
 /**
  * Image formats 
  */
 $GLOBALS['TL_LANG']['MSC']['predefinedFormats'] = 'Vordefinierte Formate';
-

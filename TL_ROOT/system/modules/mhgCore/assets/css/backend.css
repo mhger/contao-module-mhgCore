@@ -9,7 +9,7 @@
  * @license     LGPL-3.0+
  */
 body {
-    overflow-y: scroll;
+    overflow-y: scroll !important;
 }
 
 .mhg_header {
@@ -85,6 +85,30 @@ a.button + a.button {
     padding: .25em 16px 0;
     text-align: center;
     background: #E9E9E9;
+}
+
+.tab_header + .tl_formbody_edit {
+    margin-top: 2em;
+    margin-bottom: 2em;
+}
+
+.content_container > a {
+    display: inline-block;
+    margin: .5em 1em;
+    padding: .5em 1em;
+    color: #999;
+}
+
+.content_container > a:hover,
+.content_container > a:focus {
+    background: rgba(0,85,153,.1);
+}
+
+.content_container > a > span,
+.content_container > a > img {
+    display: block;
+    margin: 0 auto 5px;
+    text-align: center;
 }
 
 .tl_listing tbody tr:hover td {

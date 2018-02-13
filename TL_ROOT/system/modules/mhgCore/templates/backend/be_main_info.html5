@@ -1,0 +1,19 @@
+<div class="tl_formbody_edit tab_info">
+    <?php foreach($this->sections as $section): ?>
+    <fieldset id="pal_<?= $section->id?>" class="tl_box">
+
+        <legend onclick="AjaxRequest.toggleFieldset(this, '<?= $section->id ?>')"><?= $section->label ?></legend>
+
+        <div class="content_container">
+            <?php if($section->links): ?>
+            <?php foreach($section->links as $item): ?>
+            <a href="<?= $item->link ?>" <?php if($item->external): ?> target="_blank"<?php endif; ?>>
+                <img src="<?= $item->icon?>" alt="<?= $item->title?>">
+                <span><?= $item->label ?></span>
+            </a>
+            <?php endforeach; ?>
+            <?php endif; ?>
+        </div>        
+    </fieldset>
+    <?php endforeach; ?>
+</div>
