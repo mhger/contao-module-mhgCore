@@ -24,6 +24,7 @@ ClassLoader::addClasses(array
     'mhg\Core' => 'system/modules/mhgCore/classes/Core.php',
     'mhg\Dca' => 'system/modules/mhgCore/classes/Dca.php',
     'mhg\Exception' => 'system/modules/mhgCore/classes/Exception.php',
+    'mhg\Helper' => 'system/modules/mhgCore/classes/Helper.php',
     // Controllers
     'mhg\BackendController' => 'system/modules/mhgCore/controllers/BackendController.php',
     'mhg\BackendMain' => 'system/modules/mhgCore/controllers/BackendMain.php',
