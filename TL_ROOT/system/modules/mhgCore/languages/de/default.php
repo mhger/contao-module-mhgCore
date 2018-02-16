@@ -31,7 +31,7 @@ $GLOBALS['TL_LANG']['MSC']['mhgModules'] = array(
     'mhgBundle' => 'mhgBundle',
     'mhgCore' => 'mhgCore',
     'mhgElements' => 'mhgElements',
-    'mhgEventsEasy' => 'mhgEventsEasy',
+    'mhgEventEasy' => 'mhgEventEasy',
     'mhgFontAwesome' => 'mhgFontAwesome',
     'mhgNewsEasy' => 'mhgNewsEasy',
 );

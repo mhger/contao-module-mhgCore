@@ -92,10 +92,10 @@ class BackendMain extends \Contao\BackendMain {
                             'label' => $GLOBALS['TL_LANG']['MSC']['mhgModules']['mhgElements']
                         ),
                         (object) array(
-                            'title' => $GLOBALS['TL_LANG']['MSC']['mhgModules']['mhgEventsEasy'],
+                            'title' => $GLOBALS['TL_LANG']['MSC']['mhgModules']['mhgEventEasy'],
                             'icon' => 'system/modules/mhgCore/assets/img/mhg-icon.png',
-                            'link' => static::addToUrl('do=repository_catalog&view=mhgEventsEasy', true),
-                            'label' => $GLOBALS['TL_LANG']['MSC']['mhgModules']['mhgEventsEasy']
+                            'link' => static::addToUrl('do=repository_catalog&view=mhgEventEasy', true),
+                            'label' => $GLOBALS['TL_LANG']['MSC']['mhgModules']['mhgEventEasy']
                         ),
                         (object) array(
                             'title' => $GLOBALS['TL_LANG']['MSC']['mhgModules']['mhgFontAwesome'],
