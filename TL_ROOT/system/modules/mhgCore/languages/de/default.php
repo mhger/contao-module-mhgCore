@@ -28,9 +28,12 @@ $GLOBALS['TL_LANG']['MSC']['medienhausGersoene'] = 'Medienhaus Gersöne';
 $GLOBALS['TL_LANG']['MSC']['mhgFooterNote'] = 'Ein Projekt der <a href="https://www.medienhaus-gersoene.de" target="_blank" title="Medienhaus Gersöne - Agentur für Neue Medien: Web, Design & Marketing">Medienhaus Gersöne</a>';
 $GLOBALS['TL_LANG']['MSC']['mhgModules'] = array(
     'label' => 'MHG Erweiterungen',
+    'mhgBundle' => 'mhgBundle',
     'mhgCore' => 'mhgCore',
     'mhgElements' => 'mhgElements',
+    'mhgEventsEasy' => 'mhgEventsEasy',
     'mhgFontAwesome' => 'mhgFontAwesome',
+    'mhgNewsEasy' => 'mhgNewsEasy',
 );
 /**
  * Image formats 
