@@ -2,7 +2,7 @@
 /**
  * Contao 3 Extension [mhgCore]
  *
- * Copyright (c) 2017 Medienhaus Gersöne UG (haftungsbeschränkt) | Pierre Gersöne
+ * Copyright (c) 2018 Medienhaus Gersöne UG (haftungsbeschränkt) | Pierre Gersöne
  *
  * @package     mhgCore
  * @author      Pierre Gersöne <mail@medienhaus-gersoene.de>
@@ -40,15 +40,17 @@ class Dca {
      * 
      * @param   string $strSubject
      * @param   string $strTable
-     * @param   array $arrPalettes
+     * @param   array|string $varPalettes
      * @param   bool $bSubpalettes
      * @return  void 
      */
-    public static function appendPalettes($strSubject, $strTable, array $arrPalettes = array(), $bSubpalettes = false) {
+    public static function appendPalettes($strSubject, $strTable, $varPalettes = '', $bSubpalettes = false) {
         $palette = $bSubpalettes ? 'subpalettes' : 'palettes';
 
-        if (empty($arrPalettes)) {
+        if (empty($varPalettes)) {
             $arrPalettes = array_keys($GLOBALS['TL_DCA'][$strTable][$palette]);
+        } elseif (is_string($varPalettes)) {
+            $arrPalettes = array($varPalettes);
         }
 
         foreach ($arrPalettes as $strPalette) {
@@ -67,15 +69,17 @@ class Dca {
      * @param   string|array $search
      * @param   string|array $replace
      * @param   string $strTable
-     * @param   array $arrPalettes
+     * @param   array|string $varPalettes
      * @param   boolean $subpalettes
      * @return  void
      */
-    public static function modifyPalettes($search, $replace, $strTable, array $arrPalettes = array(), $subpalettes = false) {
+    public static function modifyPalettes($search, $replace, $strTable, $varPalettes = '', $subpalettes = false) {
         $palette = $subpalettes ? 'subpalettes' : 'palettes';
 
-        if (empty($arrPalettes)) {
+        if (empty($varPalettes)) {
             $arrPalettes = array_keys($GLOBALS['TL_DCA'][$strTable][$palette]);
+        } elseif (is_string($varPalettes)) {
+            $arrPalettes = array($varPalettes);
         }
 
         foreach ($arrPalettes as $strPalette) {
@@ -93,11 +97,11 @@ class Dca {
      * @param   string|array $search
      * @param   string|array $replace
      * @param   string $strTable
-     * @param   array $arrPalettes
+     * @param   array|string $varPalettes
      * @param   boolean $subpalettes
      * @return  void
      */
-    public static function modifySubpalettes($search, $replace, $strTable, array $arrPalettes = array(), $subpalettes = true) {
+    public static function modifySubpalettes($search, $replace, $strTable, $varPalettes = '', $subpalettes = true) {
         return self::modifyPalettes($search, $replace, $strTable, $arrPalettes, $subpalettes);
     }
 
