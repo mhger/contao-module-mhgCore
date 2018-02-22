@@ -21,6 +21,47 @@ namespace mhg;
 class Dca {
 
     /**
+     * 
+     * @param   array|string $varSelector
+     * @param   string $strTable
+     * @return  void
+     */
+    public static function addSelector($varSelector, $strTable) {
+        if (is_array($varSelector)) {
+            foreach ($varSelector as $strSelector) {
+                static::addSelector($strSelector, $strTable);
+            }
+        } elseif (is_string($varSelector)) {
+            $GLOBALS['TL_DCA'][$strTable]['palettes']['__selector__'][] = $varSelector;
+        }
+    }
+
+    /**
+     * 
+     * @param   string $strSubject
+     * @param   string $strTable
+     * @param   array $arrPalettes
+     * @param   bool $bSubpalettes
+     * @return  void 
+     */
+    public static function appendPalettes($strSubject, $strTable, array $arrPalettes = array(), $bSubpalettes = false) {
+        $palette = $bSubpalettes ? 'subpalettes' : 'palettes';
+
+        if (empty($arrPalettes)) {
+            $arrPalettes = array_keys($GLOBALS['TL_DCA'][$strTable][$palette]);
+        }
+
+        foreach ($arrPalettes as $strPalette) {
+            if ($strPalette == '__selector__') {
+                continue;
+            }
+
+            $subject = &$GLOBALS['TL_DCA'][$strTable][$palette][$strPalette];
+            $subject.= $strSubject;
+        }
+    }
+
+    /**
      * Alteration of multiple / all DCA palettes at once
      * 
      * @param   string|array $search
@@ -35,10 +76,13 @@ class Dca {
 
         if (empty($arrPalettes)) {
             $arrPalettes = array_keys($GLOBALS['TL_DCA'][$strTable][$palette]);
-            unset($arrPalettes['__selector__']);
         }
 
         foreach ($arrPalettes as $strPalette) {
+            if ($strPalette == '__selector__') {
+                continue;
+            }
+
             self::modifyPalette($search, $replace, $strTable, $strPalette, $subpalettes);
         }
     }
