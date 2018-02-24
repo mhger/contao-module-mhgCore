@@ -22,6 +22,10 @@ h6 + strong {
     font-weight: normal;
 }
 
+.teaser textarea {
+    height: 60px;
+}
+
 .mhg_header {
     width: auto;
     height: 60px;

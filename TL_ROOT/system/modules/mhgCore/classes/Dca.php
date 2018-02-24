@@ -130,7 +130,7 @@ class Dca {
      * @param   string $strTable
      * @param   string $strField
      * @param   mixed $value
-     * @return void
+     * @return  void
      */
     public static function alterField($strTable, $strField, $value) {
         $GLOBALS['TL_DCA'][$strTable]['fields'][$strField] = $value;
@@ -142,7 +142,7 @@ class Dca {
      * @param   string $strTable
      * @param   string $strField
      * @param   mixed $value
-     * @return void
+     * @return  void
      */
     public static function alterFieldValue($strTable, $strField, $strKey, $value) {
         $GLOBALS['TL_DCA'][$strTable]['fields'][$strField][$strKey] = $value;
@@ -170,6 +170,20 @@ class Dca {
     }
 
     /**
+     * Adds a single DCA palette or subpalette
+     * 
+     * @param   string $strTable
+     * @param   string $strPalette
+     * @param   string $strSubject
+     * @param   boolean $isSubpalette
+     * @return  void
+     */
+    public static function addPalette($strTable, $strPalette, $strSubject, $isSubpalette = false) {
+        $strType = static::getPaletteType($isSubpalette);
+        $GLOBALS['TL_DCA'][$strTable][$strType][$strPalette] = $strSubject;
+    }
+
+    /**
      * Returns the type of palettes
      * 
      * @param   boolean $isSubpalette
@@ -188,10 +202,10 @@ class Dca {
      * @return  array
      */
     protected static function getPalettesArray($strTable, $varPalettes, $isSubpalette = false) {
-        $strPalette = static::getPaletteType($isSubpalette);
+        $strType = static::getPaletteType($isSubpalette);
 
         if (empty($varPalettes)) {
-            $arrPalettes = array_keys($GLOBALS['TL_DCA'][$strTable][$strPalette]);
+            $arrPalettes = array_keys($GLOBALS['TL_DCA'][$strTable][$strType]);
         } elseif (is_string($varPalettes)) {
             $arrPalettes = array($varPalettes);
         } else {
