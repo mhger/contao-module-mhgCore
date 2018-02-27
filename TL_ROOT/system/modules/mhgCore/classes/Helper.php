@@ -14,7 +14,7 @@ namespace mhg;
 
 
 /**
- * class mhg\Compress
+ * class mhg\Helper
  */
 class Helper {
 
@@ -29,5 +29,15 @@ class Helper {
         $string = isset($arrValues[$hl]) ? $arrValues[$hl] : 'strong';
 
         return $string;
+    }
+
+    /**
+     * Returns true if the user is a logged in backend user.
+     * 
+     * @param   void
+     * @return  boolean
+     */
+    public static function isBackendUser() {
+        return \Input::cookie('BE_USER_AUTH') ? true : false;
     }
 }
