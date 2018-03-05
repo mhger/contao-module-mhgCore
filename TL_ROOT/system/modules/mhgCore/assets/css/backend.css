@@ -8,6 +8,11 @@
  * @link        https://www.medienhaus-gersoene.de Medienhaus Gersöne - Agentur für Neue Medien: Web, Design & Marketing
  * @license     LGPL-3.0+
  */
+::-webkit-input-placeholder {color: #999;}
+::-moz-placeholder {color: #999;}
+:-ms-input-placeholder {color: #999;}
+:-moz-placeholder {color: #999;}
+
 body {
     overflow-y: scroll !important;
 }
@@ -134,7 +139,7 @@ a.button + a.button {
 .tl_listing tfoot td {
     background: #f6f6f6;
     padding: 2px 3px 3px;
-    border: 1px solid #E9E9E9F;
+    border: 1px solid #E9E9E9;
     border-width: 1px 0;
 }
 
