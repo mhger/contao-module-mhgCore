@@ -12,12 +12,12 @@
 /**
  * alter DCA pallettes and subpalettes
  */
-mhg\Dca::modifyPalettes(array(',space', ',imagemargin', ',floating', ',caption'), '', 'tl_content');
-mhg\Dca::modifySubpalettes(array(',space', ',imagemargin', ',floating', ',caption'), '', 'tl_content');
-mhg\Dca::modifyPalettes(',alt', ',alt,caption', 'tl_content');
-mhg\Dca::modifySubpalettes(',alt', ',alt,caption', 'tl_content');
-mhg\Dca::modifyPalettes(',size', ',size,floating', 'tl_content');
-mhg\Dca::modifySubpalettes(',size', ',size,floating', 'tl_content');
+mhg\Dca::alterPalettes('tl_content', array(',space', ',imagemargin', ',floating', ',caption'), '');
+mhg\Dca::alterSubpalettes('tl_content', array(',space', ',imagemargin', ',floating', ',caption'), '');
+mhg\Dca::alterPalettes('tl_content', ',alt', ',alt,caption');
+mhg\Dca::alterSubpalettes('tl_content', ',alt', ',alt,caption');
+mhg\Dca::alterPalettes('tl_content', ',size', ',size,floating');
+mhg\Dca::alterSubpalettes('tl_content', ',size', ',size,floating');
 
 /**
  * alter DCA fields

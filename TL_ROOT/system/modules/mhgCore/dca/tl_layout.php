@@ -12,7 +12,7 @@
 /**
  * alter DCA pallettes
  */
-mhg\Dca::modifyPalettes(',head', ',head,themeColor', 'tl_layout');
+mhg\Dca::alterPalettes('tl_layout', ',head', ',head,themeColor');
 /**
  * alter DCA fields 
  */

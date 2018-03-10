@@ -12,7 +12,7 @@
 /**
  * alter DCA pallettes
  */
-mhg\Dca::modifyPalettes(array(',keywords', ',author', ',space'), array('', ',author,keywords', ''), 'tl_article');
+mhg\Dca::alterPalettes('tl_article', array(',keywords', ',author', ',space'), array('', ',author,keywords', ''));
 
 /**
  * alter DCA fields

@@ -17,8 +17,7 @@ ClassLoader::addNamespace('mhg');
 /**
  * Register the classes
  */
-ClassLoader::addClasses(array
-    (
+ClassLoader::addClasses(array(
     // Classes
     'mhg\Compress' => 'system/modules/mhgCore/classes/Compress.php',
     'mhg\Core' => 'system/modules/mhgCore/classes/Core.php',
