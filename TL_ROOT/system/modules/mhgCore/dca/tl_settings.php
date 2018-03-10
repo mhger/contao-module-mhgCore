@@ -12,7 +12,7 @@
 /**
  * alter DCA palettes
  */
-mhg\Dca::modifyPalettes(',gzipScripts', ',gzipScripts,compressCss', 'tl_settings');
+mhg\Dca::alterPalettes('tl_settings', ',gzipScripts', ',gzipScripts,compressCss');
 
 /**
  * add DCA fields

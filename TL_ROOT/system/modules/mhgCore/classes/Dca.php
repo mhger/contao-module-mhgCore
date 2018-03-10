@@ -21,12 +21,11 @@ namespace mhg;
 class Dca {
 
     /**
-     * 
-     * @param   array|string $varSelector
      * @param   string $strTable
+     * @param   array|string $varSelector
      * @return  void
      */
-    public static function addSelector($varSelector, $strTable) {
+    public static function addSelector($strTable, $varSelector) {
         if (is_array($varSelector)) {
             foreach ($varSelector as $strSelector) {
                 static::addSelector($strSelector, $strTable);
@@ -38,13 +37,13 @@ class Dca {
 
     /**
      * 
-     * @param   string $strSubject
      * @param   string $strTable
+     * @param   string $strSubject
      * @param   array|string $varPalettes
      * @param   bool $isSubpalette
      * @return  void 
      */
-    public static function appendPalettes($strSubject, $strTable, $varPalettes = '', $isSubpalette = false) {
+    public static function appendPalettes($strTable, $strSubject, $varPalettes = '', $isSubpalette = false) {
         $strType = static::getPaletteType($isSubpalette);
         $arrPalettes = static::getPalettesArray($strTable, $varPalettes, $isSubpalette);
 
@@ -58,16 +57,35 @@ class Dca {
     }
 
     /**
+     * Modifies a single DCA palette
+     * 
+     * @param   string $strTable
+     * @param   string|array $varSearch
+     * @param   string|array $varReplace
+     * @param   string $strPalette
+     * @param   boolean $isSubpalette
+     * @return  void
+     */
+    public static function alterPalette($strTable, $varSearch, $varReplace, $strPalette = 'default', $isSubpalette = false) {
+        if ($strPalette !== '__selector__') {
+            $strType = static::getPaletteType($isSubpalette);
+
+            $strSubject = &$GLOBALS['TL_DCA'][$strTable][$strType][$strPalette];
+            $strSubject = str_replace($varSearch, $varReplace, $strSubject);
+        }
+    }
+
+    /**
      * Alteration of multiple / all DCA palettes at once
      * 
-     * @param   string|array $search
-     * @param   string|array $replace
      * @param   string $strTable
+     * @param   string|array $varSearch
+     * @param   string|array $varReplace
      * @param   array|string $varPalettes
      * @param   boolean $isSubpalette
      * @return  void
      */
-    public static function modifyPalettes($search, $replace, $strTable, $varPalettes = '', $isSubpalette = false) {
+    public static function alterPalettes($strTable, $varSearch, $varReplace, $varPalettes = '', $isSubpalette = false) {
         $arrPalettes = static::getPalettesArray($strTable, $varPalettes, $isSubpalette);
 
         foreach ($arrPalettes as $strPalette) {
@@ -75,41 +93,22 @@ class Dca {
                 continue;
             }
 
-            self::modifyPalette($search, $replace, $strTable, $strPalette, $isSubpalette);
+            self::alterPalette($strTable, $varSearch, $varReplace, $strPalette, $isSubpalette);
         }
     }
 
     /**
      * Wrapper method. Alteration of multiple / all DCA subpalettes at once
      * 
-     * @param   string|array $search
-     * @param   string|array $replace
      * @param   string $strTable
+     * @param   string|array $varSearch
+     * @param   string|array $varReplace
      * @param   array|string $varPalettes
      * @param   boolean $subpalettes
      * @return  void
      */
-    public static function modifySubpalettes($search, $replace, $strTable, $varPalettes = '', $subpalettes = true) {
-        return self::modifyPalettes($search, $replace, $strTable, $varPalettes, $subpalettes);
-    }
-
-    /**
-     * Modifies a single DCA palette
-     * 
-     * @param   string|array $varSearch
-     * @param   string|array $varReplace
-     * @param   string $strTable
-     * @param   string $strPalette
-     * @param   boolean $isSubpalette
-     * @return  void
-     */
-    public static function modifyPalette($varSearch, $varReplace, $strTable, $strPalette = 'default', $isSubpalette = false) {
-        if ($strPalette !== '__selector__') {
-            $strType = static::getPaletteType($isSubpalette);
-
-            $strSubject = &$GLOBALS['TL_DCA'][$strTable][$strType][$strPalette];
-            $strSubject = str_replace($varSearch, $varReplace, $strSubject);
-        }
+    public static function alterSubpalettes($strTable, $varSearch, $varReplace, $varPalettes = '', $subpalettes = true) {
+        self::alterPalettes($strTable, $varSearch, $varReplace, $varPalettes, $subpalettes);
     }
 
     /**

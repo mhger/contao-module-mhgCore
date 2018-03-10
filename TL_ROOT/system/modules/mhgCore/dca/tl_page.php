@@ -12,7 +12,7 @@
 /**
  * alter DCA palettes
  */
-mhg\Dca::modifyPalettes('robots,description', 'description,robots', 'tl_page');
+mhg\Dca::alterPalettes('tl_page', 'robots,description', 'description,robots');
 
 /**
  * alter DCA fields
