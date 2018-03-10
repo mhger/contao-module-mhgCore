@@ -28,9 +28,9 @@ class Dca {
     public static function addSelector($strTable, $varSelector) {
         if (is_array($varSelector)) {
             foreach ($varSelector as $strSelector) {
-                static::addSelector($strSelector, $strTable);
+                self::addSelector($strSelector, $strTable);
             }
-        } elseif (is_string($varSelector)) {
+        } elseif (is_string($varSelector) && !in_array($varSelector, $GLOBALS['TL_DCA'][$strTable]['palettes']['__selector__'])) {
             $GLOBALS['TL_DCA'][$strTable]['palettes']['__selector__'][] = $varSelector;
         }
     }
@@ -44,8 +44,8 @@ class Dca {
      * @return  void 
      */
     public static function appendPalettes($strTable, $strSubject, $varPalettes = '', $isSubpalette = false) {
-        $strType = static::getPaletteType($isSubpalette);
-        $arrPalettes = static::getPalettesArray($strTable, $varPalettes, $isSubpalette);
+        $strType = self::getPaletteType($isSubpalette);
+        $arrPalettes = self::getPalettesArray($strTable, $varPalettes, $isSubpalette);
 
         foreach ($arrPalettes as $strPalette) {
             if ($strPalette == '__selector__') {
@@ -68,7 +68,7 @@ class Dca {
      */
     public static function alterPalette($strTable, $varSearch, $varReplace, $strPalette = 'default', $isSubpalette = false) {
         if ($strPalette !== '__selector__') {
-            $strType = static::getPaletteType($isSubpalette);
+            $strType = self::getPaletteType($isSubpalette);
 
             $strSubject = &$GLOBALS['TL_DCA'][$strTable][$strType][$strPalette];
             $strSubject = str_replace($varSearch, $varReplace, $strSubject);
@@ -86,7 +86,7 @@ class Dca {
      * @return  void
      */
     public static function alterPalettes($strTable, $varSearch, $varReplace, $varPalettes = '', $isSubpalette = false) {
-        $arrPalettes = static::getPalettesArray($strTable, $varPalettes, $isSubpalette);
+        $arrPalettes = self::getPalettesArray($strTable, $varPalettes, $isSubpalette);
 
         foreach ($arrPalettes as $strPalette) {
             if ($strPalette == '__selector__') {
@@ -178,8 +178,22 @@ class Dca {
      * @return  void
      */
     public static function addPalette($strTable, $strPalette, $strSubject, $isSubpalette = false) {
-        $strType = static::getPaletteType($isSubpalette);
+        $strType = self::getPaletteType($isSubpalette);
         $GLOBALS['TL_DCA'][$strTable][$strType][$strPalette] = $strSubject;
+    }
+
+    /**
+     * Adds a single DCA subpalette and also adds the required selector.
+     * Wrapper method.
+     * 
+     * @param   string $strTable
+     * @param   string $strPalette
+     * @param   string $strSubject
+     * @return  void
+     */
+    public static function addSubpalette($strTable, $strPalette, $strSubject) {
+        self::addSelector($strTable, $strSubject);
+        self::addPalette($strTable, $strPalette, $strSubject, true);
     }
 
     /**
@@ -201,7 +215,7 @@ class Dca {
      * @return  array
      */
     protected static function getPalettesArray($strTable, $varPalettes, $isSubpalette = false) {
-        $strType = static::getPaletteType($isSubpalette);
+        $strType = self::getPaletteType($isSubpalette);
 
         if (empty($varPalettes)) {
             $arrPalettes = array_keys($GLOBALS['TL_DCA'][$strTable][$strType]);
