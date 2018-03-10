@@ -192,7 +192,7 @@ class Dca {
      * @return  void
      */
     public static function addSubpalette($strTable, $strPalette, $strSubject) {
-        self::addSelector($strTable, $strSubject);
+        self::addSelector($strTable, $strPalette);
         self::addPalette($strTable, $strPalette, $strSubject, true);
     }
 
