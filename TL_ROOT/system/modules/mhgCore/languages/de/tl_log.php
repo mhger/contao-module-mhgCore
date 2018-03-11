@@ -2,7 +2,7 @@
 /**
  * Contao 3 Extension [mhgCore]
  *
- * Copyright (c) 2017 Medienhaus Gersöne UG (haftungsbeschränkt) | Pierre Gersöne
+ * Copyright (c) 2018 Medienhaus Gersöne UG (haftungsbeschränkt) | Pierre Gersöne
  *
  * @package     mhgCore
  * @author      Pierre Gersöne <mail@medienhaus-gersoene.de>

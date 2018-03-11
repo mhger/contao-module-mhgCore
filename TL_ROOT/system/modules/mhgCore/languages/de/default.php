@@ -10,7 +10,12 @@
  * @license     LGPL-3.0+
  */
 /**
- * Sonstiges
+ * Image formats 
+ */
+$GLOBALS['TL_LANG']['MSC']['predefinedFormats'] = 'Vordefinierte Formate';
+
+/**
+ * Misc
  */
 $GLOBALS['TL_LANG']['MSC']['dashboard'] = array(
     'default' => 'Dashboard',
@@ -35,7 +40,3 @@ $GLOBALS['TL_LANG']['MSC']['mhgModules'] = array(
     'mhgFontAwesome' => 'mhgFontAwesome',
     'mhgNewsEasy' => 'mhgNewsEasy',
 );
-/**
- * Image formats 
- */
-$GLOBALS['TL_LANG']['MSC']['predefinedFormats'] = 'Vordefinierte Formate';
