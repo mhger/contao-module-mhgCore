@@ -21,11 +21,12 @@ class BackendMain extends \Contao\BackendMain {
     /**
      * Extend / modfiy the welcome screen
      *
-     * @return string
+     * @param   void
+     * @return  string
      */
     protected function welcomeScreen() {
         $varCallback = null;
-        $activeTab = BackendController::getActiveTab(welcomeScreen);
+        $activeTab = BackendController::getActiveTab('welcomeScreen');
 
         // first generate tabs
         $arrTabs = array();
