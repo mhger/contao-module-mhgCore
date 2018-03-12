@@ -114,7 +114,7 @@ if (TL_MODE == 'FE') {
  * global backend changes / modifications
  */
 if (TL_MODE == 'BE') {
-    $GLOBALS['TL_CSS'][] = 'system/modules/mhgCore/assets/css/backend.css?v=' . time();
+    $GLOBALS['TL_CSS'][] = 'system/modules/mhgCore/assets/css/backend.css';
 }
 
 // general MHG configuration array
