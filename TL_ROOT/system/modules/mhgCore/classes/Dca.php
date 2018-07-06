@@ -215,14 +215,15 @@ class Dca {
      * @return  array
      */
     protected static function getPalettesArray($strTable, $varPalettes, $isSubpalette = false) {
+        $arrPalettes = array();
         $strType = self::getPaletteType($isSubpalette);
 
         if (empty($varPalettes)) {
             $arrPalettes = array_keys($GLOBALS['TL_DCA'][$strTable][$strType]);
         } elseif (is_string($varPalettes)) {
             $arrPalettes = array($varPalettes);
-        } else {
-            $arrPalettes = array();
+        } elseif (is_array($varPalettes)) {
+            $arrPalettes = $varPalettes;
         }
 
         return $arrPalettes;
